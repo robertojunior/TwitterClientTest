@@ -4,4 +4,5 @@ This app is a short test to FutureWorkshops.com
 
 ### Third party libraries ###
 
-* Summary of set up
+* Fabric Twitter SDK
+To login on twitter and make calls to Twitter API
