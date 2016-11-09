@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Twitter Test</string>
+    <string name="timeline">Timeline</string>
+    <string name="favorites">Favorites</string>
+    <string name="about">About</string>
+    <string name="login_explain">This app is a short test to FutureWorkshops.com\nYou need to log in on twitter to enjoy it. Let\'s go?</string>
+    <string name="hello">Hello!</string>
+    <string name="twitter_key">oKyjfpqOpMGYwddHpNJ7HgUif</string>
+    <string name="twitter_secret">JTlxiehMyfgEPaF6iy9tToSbOkbAzbQfNfLWFF9sourE8AopoG</string>
+    <string name="error_ocurred">An error occurred, sorry! :(</string>
+    <string name="tweet_favorited_success">Tweet favorited with success!</string>
+    <string name="tweet_unfavorited_success">Tweet removed with success!</string>
+    <string name="tweets">tweets</string>
+    <string name="followers">followers</string>
+</resources>

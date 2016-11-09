@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/profile_image"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:placeholderImage="@drawable/egg"
+        fresco:roundAsCircle="true"
+        fresco:roundingBorderColor="@color/colorAccent"
+        fresco:roundingBorderWidth="2dp" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/profile_image"
+        android:textStyle="bold"
+        tools:text="Screen name" />
+
+    <TextView
+        android:id="@+id/screen_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@+id/name"
+        tools:text="name" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/name"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@+id/profile_image"
+        tools:text="text" />
+
+    <TextView
+        android:id="@+id/created_at"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@+id/profile_image"
+        android:textSize="12sp"
+        tools:text="3 hours ago" />
+
+    <ImageButton
+        android:id="@+id/favorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/text"
+        android:layout_marginTop="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/heart_outline" />
+
+</RelativeLayout>
+
+
