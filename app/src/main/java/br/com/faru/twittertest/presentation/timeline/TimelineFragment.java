@@ -131,7 +131,8 @@ public class TimelineFragment extends Fragment implements TimelineContract.View,
 
     @Override
     public void addOnScrollListener(EndlessGridScrollListener.OnEndlessGridScrollListener onEndlessGridScrollListener, String screenName) {
-        new EndlessGridScrollListener(onEndlessGridScrollListener, timelineList.getLinearLayoutManager(), screenName);
+        timelineList.addOnScrollListener(new EndlessGridScrollListener(onEndlessGridScrollListener,
+                timelineList.getLinearLayoutManager(), screenName));
     }
 
     @Override

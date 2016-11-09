@@ -17,4 +17,5 @@
     <string name="about_project">This app is a short test to FutureWorkshops.com\n\nTo built this app I used the following third party libraries\n\nFabric Twitter SDK\nTo login on twitter and make calls to Twitter API\n\nFresco\nTo load external images from user profile\n\nButterKnife\nTo bind views and avoid repeated calls to findViewById and write a fast and clean code\n\nDagger\nTo Dependency Injection and make write tests easier\n\nMockito and Power Mock\nTo mock objets for test</string>
     <string name="about_project_title">About Project</string>
     <string name="about_me_title">About Me</string>
+    <string name="no_tweets">No tweets :(</string>
 </resources>

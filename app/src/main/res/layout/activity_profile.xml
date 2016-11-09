@@ -39,6 +39,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@+id/profile_image"
+                    android:layout_toStartOf="@+id/profile_image"
                     android:textColor="@android:color/white"
                     android:textSize="24sp"
                     tools:text="30K" />
@@ -69,6 +70,7 @@
                     android:id="@+id/followers_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_toEndOf="@id/profile_image"
                     android:layout_toRightOf="@id/profile_image"
                     android:textColor="@android:color/white"
                     android:textSize="24sp"

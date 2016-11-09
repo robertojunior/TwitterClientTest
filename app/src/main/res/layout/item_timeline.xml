@@ -23,6 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/profile_image"
         android:layout_toRightOf="@+id/profile_image"
         android:textStyle="bold"
         tools:text="Screen name" />
@@ -32,6 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@+id/name"
         android:layout_toRightOf="@+id/name"
         tools:text="name" />
 
@@ -41,7 +45,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/name"
         android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/profile_image"
         android:layout_toRightOf="@+id/profile_image"
         tools:text="text" />
 
@@ -51,7 +57,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/text"
         android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/profile_image"
         android:layout_toRightOf="@+id/profile_image"
         android:textSize="12sp"
         tools:text="3 hours ago" />
@@ -60,6 +68,7 @@
         android:id="@+id/favorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@id/text"
         android:layout_marginTop="8dp"
