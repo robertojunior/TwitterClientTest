@@ -40,7 +40,9 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         TweetViewModel tweet = tweets.get(position);
-        holder.layout.setBackgroundColor(position % 2 == 1 ? Color.parseColor("#F0F0F0") : Color.WHITE);
+        if (position % 2 == 0) {
+            holder.layout.setBackgroundColor(Color.WHITE);
+        }
         holder.profileImage.setImageURI(tweet.getProfile().getProfileImageUri());
         holder.text.setText(tweet.getText());
         holder.name.setText(tweet.getProfile().getName());
