@@ -14,10 +14,10 @@ public class ProfileViewModelTest {
 
     ProfileViewModel profileViewModel;
 
-    private static final int FOLLOWERS_COUNT = 300000;
+    private static final int FOLLOWERS_COUNT = 30000;
     private static final String FORMATTED_FOLLOWERS_COUNT = "30K";
     private static final String FORMATTED_STATUSES_COUNT = "90K";
-    private static final int STATUSES_COUNT = 900000;
+    private static final int STATUSES_COUNT = 90000;
     private static final String FORMATTED_SCREEN_NAME = "@vaifaru";
     private static final String SCREEN_NAME = "vaifaru";
 

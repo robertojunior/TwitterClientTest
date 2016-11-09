@@ -52,7 +52,7 @@ public class FormatterUtils {
     }
 
     public static String prettyDouble(int count) {
-        return pretty(new Double(count/10));
+        return pretty(new Double(count));
     }
 
     private static String pretty(double number) {
