@@ -55,16 +55,11 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
     }
 
     public void addTweets(List<TweetViewModel> tweetViewModels) {
-        if (tweetViewModels != null && tweetViewModels.size() > 0) {
+        if (tweetViewModels != null && !tweetViewModels.isEmpty()) {
             tweets.addAll(tweetViewModels);
             removeDuplicates(tweets);
             Collections.sort(tweets);
-            listener.showEmptyView(false);
             notifyDataSetChanged();
-        }
-
-        if (tweets == null || tweets.size() == 0) {
-            listener.showEmptyView(true);
         }
     }
 
@@ -85,6 +80,10 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
         while (out < size) {
             list.remove(--size);
         }
+    }
+
+    public boolean isEmpty() {
+        return tweets == null || tweets.isEmpty();
     }
 
     class ViewHolder extends RecyclerView.ViewHolder {

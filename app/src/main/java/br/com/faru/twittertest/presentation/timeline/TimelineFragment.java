@@ -157,6 +157,11 @@ public class TimelineFragment extends Fragment implements TimelineContract.View,
     }
 
     @Override
+    public int tweetCount() {
+        return timelineAdapter.getItemCount();
+    }
+
+    @Override
     public void setProgressIndicator(boolean active) {
         progressView.setVisibility(active ? View.VISIBLE : View.GONE);
         if (!active)

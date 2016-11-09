@@ -119,6 +119,7 @@ public class TimelinePresenter implements
 
         isDownloading = false;
         view.setProgressIndicator(isDownloading);
+        view.showEmptyView(tweetIsEmpty());
     }
 
     @Override
@@ -154,6 +155,7 @@ public class TimelinePresenter implements
         }
         view.showResults(tweetViewModels);
         view.setProgressIndicator(false);
+        view.showEmptyView(tweetIsEmpty());
     }
 
     @Override
@@ -193,6 +195,10 @@ public class TimelinePresenter implements
     public void getFavoriteTimeline(boolean showProgress) {
         view.setProgressIndicator(showProgress);
         favoriteRepository.findAll(this);
+    }
+
+    private boolean tweetIsEmpty() {
+        return view.tweetCount() == 0;
     }
 
 }

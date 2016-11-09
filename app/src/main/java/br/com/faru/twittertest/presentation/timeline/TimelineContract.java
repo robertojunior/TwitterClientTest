@@ -23,6 +23,10 @@ public interface TimelineContract {
 
         void addOnScrollListener(EndlessGridScrollListener.OnEndlessGridScrollListener
                                          onEndlessGridScrollListener, String screenName);
+
+        void showEmptyView(boolean show);
+
+        int tweetCount();
     }
 
     interface UserInteraction {

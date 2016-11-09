@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 
 public class VerticalRecyclerView extends RecyclerView {
+
     public VerticalRecyclerView(Context context) {
         super(context);
         init(context);

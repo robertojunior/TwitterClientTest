@@ -9,6 +9,4 @@ public interface TimelineAdapterListener {
 
     void onClickFavorite(TweetViewModel tweet);
 
-    void showEmptyView(boolean show);
-
 }

@@ -254,6 +254,20 @@ public class TimelinePresenterTest {
     }
 
     @Test
+    public void shouldShowEmptyViewWhenGetTimelineSuccessWithEmptyList() {
+        when(viewMock.tweetCount()).thenReturn(0);
+        timelinePresenter.onGetTimelineSuccess(mock(ArrayList.class));
+        verify(viewMock).showEmptyView(true);
+    }
+
+    @Test
+    public void shouldHideEmptyViewWhenGetTimelineSuccessWithEmptyList() {
+        when(viewMock.tweetCount()).thenReturn(1);
+        timelinePresenter.onGetTimelineSuccess(mock(ArrayList.class));
+        verify(viewMock).showEmptyView(false);
+    }
+
+    @Test
     public void shouldHideProgressWhenGetTimelineSuccess() {
         timelinePresenter.onGetTimelineSuccess(mock(ArrayList.class));
         verify(viewMock).setProgressIndicator(false);
