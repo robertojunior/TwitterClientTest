@@ -8,7 +8,7 @@ import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 
-import br.com.faru.twittertest.R;
+import br.com.faru.twittertest.BuildConfig;
 import br.com.faru.twittertest.di.component.DaggerTwitterTestComponent;
 import br.com.faru.twittertest.di.component.TwitterTestComponent;
 import io.fabric.sdk.android.Fabric;
@@ -23,8 +23,8 @@ public class TwitterTestApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        TwitterAuthConfig authConfig = new TwitterAuthConfig(getString(R.string.twitter_key),
-                getString(R.string.twitter_secret));
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(BuildConfig.TWITTER_KEY,
+                BuildConfig.TWITTER_SECRET);
 
         Fabric.with(this, new Twitter(authConfig));
 

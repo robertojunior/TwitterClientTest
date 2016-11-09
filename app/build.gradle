@@ -34,9 +34,20 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        def TWITTER_KEY = "oKyjfpqOpMGYwddHpNJ7HgUif"
+        def TWITTER_SECRET = "JTlxiehMyfgEPaF6iy9tToSbOkbAzbQfNfLWFF9sourE8AopoG"
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "TWITTER_KEY", "\"" + TWITTER_KEY + "\""
+            buildConfigField "String", "TWITTER_SECRET", "\"" + TWITTER_SECRET + "\""
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+            buildConfigField "String", "TWITTER_KEY", "\"" + TWITTER_KEY + "\""
+            buildConfigField "String", "TWITTER_SECRET", "\"" + TWITTER_SECRET + "\""
         }
     }
 }
