@@ -9,4 +9,4 @@ This app is a short test to FutureWorkshops.com
 * ButterKnife to bind views and avoid repeated calls to findViewById and write a fast and clean code
 * Dagger to Dependency Injection and make write tests easier
 * Mockito and Power Mock to mock objets for test
-* Realm to save favorite tweets 
+* Realm to save favorites tweets
