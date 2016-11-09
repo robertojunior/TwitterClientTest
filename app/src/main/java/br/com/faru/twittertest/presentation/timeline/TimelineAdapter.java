@@ -59,7 +59,12 @@ public class TimelineAdapter extends RecyclerView.Adapter<TimelineAdapter.ViewHo
             tweets.addAll(tweetViewModels);
             removeDuplicates(tweets);
             Collections.sort(tweets);
+            listener.showEmptyView(false);
             notifyDataSetChanged();
+        }
+
+        if (tweets == null || tweets.size() == 0) {
+            listener.showEmptyView(true);
         }
     }
 

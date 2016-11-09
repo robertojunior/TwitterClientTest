@@ -7,6 +7,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
@@ -37,6 +38,9 @@ public class TimelineFragment extends Fragment implements TimelineContract.View,
 
     @BindView(R.id.progress_view)
     CircularProgressView progressView;
+
+    @BindView(R.id.empty_view)
+    TextView emptyView;
 
     @Inject
     TimelinePresenter presenter;
@@ -145,6 +149,11 @@ public class TimelineFragment extends Fragment implements TimelineContract.View,
     @Override
     public void onClickFavorite(TweetViewModel tweet) {
         presenter.saveFavorite(tweet);
+    }
+
+    @Override
+    public void showEmptyView(boolean show) {
+        emptyView.setVisibility(show ? View.VISIBLE : View.GONE);
     }
 
     @Override
