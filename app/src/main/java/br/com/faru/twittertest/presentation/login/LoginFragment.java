@@ -18,7 +18,7 @@ import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 import javax.inject.Inject;
 
 import br.com.faru.twittertest.R;
-import br.com.faru.twittertest.app.TwitterTestApplication;
+import br.com.faru.twittertest.di.Injector;
 import br.com.faru.twittertest.util.Navigation;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,7 +43,7 @@ public class LoginFragment extends Fragment implements LoginContract.View {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         ButterKnife.bind(this, view);
 
-        TwitterTestApplication.getApplication().getComponent().inject(this);
+        Injector.getComponent().inject(this);
 
         presenter.setView(this);
 

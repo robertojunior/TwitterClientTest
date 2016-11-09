@@ -17,7 +17,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import br.com.faru.twittertest.R;
-import br.com.faru.twittertest.app.TwitterTestApplication;
+import br.com.faru.twittertest.di.Injector;
 import br.com.faru.twittertest.model.view.ProfileViewModel;
 import br.com.faru.twittertest.model.view.TweetViewModel;
 import br.com.faru.twittertest.presentation.home.HomeActivityListener;
@@ -93,7 +93,7 @@ public class TimelineFragment extends Fragment implements TimelineContract.View,
             type = (TimelineType) getArguments().getSerializable(Constants.TYPE);
         }
 
-        TwitterTestApplication.getComponent().inject(this);
+        Injector.getComponent().inject(this);
 
         timelineAdapter = new TimelineAdapter(this);
         timelineList.setAdapter(timelineAdapter);

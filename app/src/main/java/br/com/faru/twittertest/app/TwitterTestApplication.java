@@ -9,15 +9,14 @@ import com.twitter.sdk.android.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 
 import br.com.faru.twittertest.BuildConfig;
+import br.com.faru.twittertest.di.Injector;
 import br.com.faru.twittertest.di.component.DaggerTwitterTestComponent;
-import br.com.faru.twittertest.di.component.TwitterTestComponent;
 import io.fabric.sdk.android.Fabric;
 import io.realm.Realm;
 
 public class TwitterTestApplication extends Application {
 
     public static TwitterTestApplication application;
-    public static TwitterTestComponent component;
 
     @Override
     public void onCreate() {
@@ -37,7 +36,7 @@ public class TwitterTestApplication extends Application {
 
         application = this;
 
-        component = DaggerTwitterTestComponent.builder().build();
+        Injector.initialize(DaggerTwitterTestComponent.builder().build());
 
         Realm.init(this);
 
@@ -45,10 +44,6 @@ public class TwitterTestApplication extends Application {
 
     public static TwitterTestApplication getApplication() {
         return application;
-    }
-
-    public static TwitterTestComponent getComponent() {
-        return component;
     }
 
 }

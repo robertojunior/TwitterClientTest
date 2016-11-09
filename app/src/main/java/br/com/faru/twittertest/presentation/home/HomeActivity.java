@@ -6,7 +6,7 @@ import android.support.design.widget.BottomNavigationView;
 import javax.inject.Inject;
 
 import br.com.faru.twittertest.R;
-import br.com.faru.twittertest.app.TwitterTestApplication;
+import br.com.faru.twittertest.di.Injector;
 import br.com.faru.twittertest.presentation.BaseActivity;
 import br.com.faru.twittertest.presentation.about.AboutFragment;
 import br.com.faru.twittertest.presentation.timeline.TimelineFragment;
@@ -30,7 +30,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.View, Hom
 
         ButterKnife.bind(this);
 
-        TwitterTestApplication.getApplication().getComponent().inject(this);
+        Injector.getComponent().inject(this);
 
         presenter.setView(this);
         presenter.checkTwitterCredentials();
