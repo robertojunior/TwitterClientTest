@@ -13,8 +13,8 @@
     <string name="tweets">tweets</string>
     <string name="followers">followers</string>
     <string name="about_me_image"><![CDATA[https://scontent.fcgh11-1.fna.fbcdn.net/v/t1.0-9/14937239_333836043638562_1157686259084164549_n.jpg?oh=dce1c216721edce2eed572fe504c117b&oe=58D1F8AA]]></string>
-    <string name="about_me">Hi. My name is Roberto. I am 28 years old brazilian Android Engineer that lives in Sao Paulo but want lives in London soon :)</string>
-    <string name="about_project">This app is a short test to FutureWorkshops.com\n\nTo built this app I use follows third party libraries\n\nFabric Twitter SDK\nTo login on twitter and make calls to Twitter API\n\nFresco\nTo load external images from user profile\n\nButterKnife\nTo bind views and avoid repeated calls to findViewById and write a fast and clean code\n\nDagger\nTo Dependency Injection and make write tests easier\n\nMockito and Power Mock\nTo mock objets for test</string>
+    <string name="about_me">Hi. My name is Roberto. I\'m a 28 years old brazilian Android Engineer that lives in Sao Paulo but wants live in London soon :)</string>
+    <string name="about_project">This app is a short test to FutureWorkshops.com\n\nTo built this app I used the following third party libraries\n\nFabric Twitter SDK\nTo login on twitter and make calls to Twitter API\n\nFresco\nTo load external images from user profile\n\nButterKnife\nTo bind views and avoid repeated calls to findViewById and write a fast and clean code\n\nDagger\nTo Dependency Injection and make write tests easier\n\nMockito and Power Mock\nTo mock objets for test</string>
     <string name="about_project_title">About Project</string>
     <string name="about_me_title">About Me</string>
 </resources>
