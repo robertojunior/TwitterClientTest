@@ -19,6 +19,7 @@ import br.com.faru.twittertest.R;
 import br.com.faru.twittertest.app.TwitterTestApplication;
 import br.com.faru.twittertest.model.view.ProfileViewModel;
 import br.com.faru.twittertest.model.view.TweetViewModel;
+import br.com.faru.twittertest.presentation.home.HomeActivityListener;
 import br.com.faru.twittertest.presentation.widget.EndlessGridScrollListener;
 import br.com.faru.twittertest.presentation.widget.VerticalRecyclerView;
 import br.com.faru.twittertest.util.Constants;
@@ -42,7 +43,7 @@ public class TimelineFragment extends Fragment implements TimelineContract.View,
 
     private TimelineType type;
     private TimelineAdapter timelineAdapter;
-    private OnTimelineFragmentListener onTimelineFragmentListener;
+    private HomeActivityListener homeActivityListener;
 
     public static TimelineFragment newInstance(TimelineType type, ProfileViewModel profile) {
         TimelineFragment fragment = new TimelineFragment();
@@ -70,8 +71,8 @@ public class TimelineFragment extends Fragment implements TimelineContract.View,
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnTimelineFragmentListener) {
-            onTimelineFragmentListener = (OnTimelineFragmentListener) context;
+        if (context instanceof HomeActivityListener) {
+            homeActivityListener = (HomeActivityListener) context;
         }
     }
 
@@ -121,10 +122,10 @@ public class TimelineFragment extends Fragment implements TimelineContract.View,
 
     @Override
     public void setToolbarTitle(int resId) {
-        if (onTimelineFragmentListener != null) {
-            onTimelineFragmentListener.setToolbarTitle(resId);
+        if (homeActivityListener != null) {
+            homeActivityListener.setToolbarTitle(resId);
         } else {
-            throw new IllegalArgumentException("Activity must implement " + OnTimelineFragmentListener.class.getCanonicalName());
+            throw new IllegalArgumentException("Activity must implement " + HomeActivityListener.class.getCanonicalName());
         }
     }
 
