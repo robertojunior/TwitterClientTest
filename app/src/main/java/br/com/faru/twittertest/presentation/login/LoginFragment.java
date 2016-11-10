@@ -43,7 +43,7 @@ public class LoginFragment extends Fragment implements LoginContract.View {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         ButterKnife.bind(this, view);
 
-        Injector.getInstance().getComponent().inject(this);
+        Injector.getComponent().inject(this);
 
         presenter.setView(this);
 
