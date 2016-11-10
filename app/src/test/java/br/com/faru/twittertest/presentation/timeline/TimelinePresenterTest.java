@@ -21,8 +21,8 @@ import br.com.faru.twittertest.client.callback.GetTimelineCallback;
 import br.com.faru.twittertest.model.view.ProfileViewModel;
 import br.com.faru.twittertest.model.view.TweetViewModel;
 import br.com.faru.twittertest.presentation.widget.EndlessGridScrollListener;
-import br.com.faru.twittertest.repository.favorite.FavoriteRepository;
-import br.com.faru.twittertest.repository.favorite.FavoritesCallback;
+import br.com.faru.twittertest.dao.favorite.FavoriteDAO;
+import br.com.faru.twittertest.dao.favorite.FavoritesCallback;
 import br.com.faru.twittertest.util.Constants;
 
 import static org.mockito.Matchers.any;
@@ -43,7 +43,7 @@ public class TimelinePresenterTest {
     TwitterClient twitterClientMock;
 
     @Mock
-    FavoriteRepository favoriteRepositoryMock;
+    FavoriteDAO favoriteDAOMock;
 
     @Mock
     TimelineContract.View viewMock;
@@ -57,7 +57,7 @@ public class TimelinePresenterTest {
 
     @Before
     public void setup() {
-        timelinePresenter = new TimelinePresenter(twitterClientMock, favoriteRepositoryMock);
+        timelinePresenter = new TimelinePresenter(twitterClientMock, favoriteDAOMock);
         timelinePresenter.setView(viewMock);
         PowerMockito.mockStatic(TextUtils.class);
     }
@@ -161,7 +161,7 @@ public class TimelinePresenterTest {
         when(bundle.getSerializable(Constants.TYPE)).thenReturn(TimelineType.FAVORITE);
 
         timelinePresenter.init(bundle);
-        verify(favoriteRepositoryMock).findAll(any(FavoritesCallback.class));
+        verify(favoriteDAOMock).findAll(any(FavoritesCallback.class));
     }
 
     @Test
@@ -218,7 +218,7 @@ public class TimelinePresenterTest {
         when(bundle.getSerializable(Constants.TYPE)).thenReturn(TimelineType.FAVORITE);
 
         timelinePresenter.swipeRefresh(bundle);
-        verify(favoriteRepositoryMock).findAll(any(FavoritesCallback.class));
+        verify(favoriteDAOMock).findAll(any(FavoritesCallback.class));
     }
 
     @Test
@@ -233,18 +233,18 @@ public class TimelinePresenterTest {
 
     @Test
     public void shouldRemoveWhenSaveFavorite() {
-        when(favoriteRepositoryMock.exists(anyLong())).thenReturn(true);
+        when(favoriteDAOMock.exists(anyLong())).thenReturn(true);
         final TweetViewModel tweetViewModelMock = mock(TweetViewModel.class);
         timelinePresenter.saveFavorite(tweetViewModelMock);
-        verify(favoriteRepositoryMock).remove(eq(tweetViewModelMock), any(FavoritesCallback.class));
+        verify(favoriteDAOMock).remove(eq(tweetViewModelMock), any(FavoritesCallback.class));
     }
 
     @Test
     public void shouldSaveWhenSaveFavorite() {
-        when(favoriteRepositoryMock.exists(anyLong())).thenReturn(false);
+        when(favoriteDAOMock.exists(anyLong())).thenReturn(false);
         TweetViewModel tweetViewModelMock = mock(TweetViewModel.class);
         timelinePresenter.saveFavorite(tweetViewModelMock);
-        verify(favoriteRepositoryMock).save(eq(tweetViewModelMock), any(FavoritesCallback.class));
+        verify(favoriteDAOMock).save(eq(tweetViewModelMock), any(FavoritesCallback.class));
     }
 
     @Test

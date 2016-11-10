@@ -1,4 +1,4 @@
-package br.com.faru.twittertest.repository.favorite;
+package br.com.faru.twittertest.dao.favorite;
 
 import java.util.List;
 

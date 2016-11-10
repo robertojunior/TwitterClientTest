@@ -1,7 +1,7 @@
 package br.com.faru.twittertest.di.module;
 
 
-import br.com.faru.twittertest.repository.favorite.FavoriteRepository;
+import br.com.faru.twittertest.dao.favorite.FavoriteDAO;
 import dagger.Module;
 import dagger.Provides;
 import io.realm.Realm;
@@ -10,8 +10,8 @@ import io.realm.Realm;
 public class DAOModule {
 
     @Provides
-    public FavoriteRepository provideFavoriteRepository() {
-        return new FavoriteRepository(Realm.getDefaultInstance());
+    public FavoriteDAO provideFavoriteDAO() {
+        return new FavoriteDAO(Realm.getDefaultInstance());
     }
 
 }

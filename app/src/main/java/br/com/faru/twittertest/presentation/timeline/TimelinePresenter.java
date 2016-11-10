@@ -17,8 +17,8 @@ import br.com.faru.twittertest.model.Tweet;
 import br.com.faru.twittertest.model.view.ProfileViewModel;
 import br.com.faru.twittertest.model.view.TweetViewModel;
 import br.com.faru.twittertest.presentation.widget.EndlessGridScrollListener;
-import br.com.faru.twittertest.repository.favorite.FavoriteRepository;
-import br.com.faru.twittertest.repository.favorite.FavoritesCallback;
+import br.com.faru.twittertest.dao.favorite.FavoriteDAO;
+import br.com.faru.twittertest.dao.favorite.FavoritesCallback;
 import br.com.faru.twittertest.util.Constants;
 
 public class TimelinePresenter implements
@@ -28,7 +28,7 @@ public class TimelinePresenter implements
         EndlessGridScrollListener.OnEndlessGridScrollListener {
 
     TwitterClient twitterClient;
-    FavoriteRepository favoriteRepository;
+    FavoriteDAO favoriteDAO;
 
     private TimelineContract.View view;
     private long sinceId;
@@ -36,9 +36,9 @@ public class TimelinePresenter implements
     private long maxId;
 
     @Inject
-    public TimelinePresenter(TwitterClient client, FavoriteRepository favoriteRepository) {
+    public TimelinePresenter(TwitterClient client, FavoriteDAO favoriteDAO) {
         this.twitterClient = client;
-        this.favoriteRepository = favoriteRepository;
+        this.favoriteDAO = favoriteDAO;
     }
 
     @Override
@@ -98,10 +98,10 @@ public class TimelinePresenter implements
 
     @Override
     public void saveFavorite(TweetViewModel tweet) {
-        if (favoriteRepository.exists(tweet.getId())) {
-            favoriteRepository.remove(tweet, this);
+        if (favoriteDAO.exists(tweet.getId())) {
+            favoriteDAO.remove(tweet, this);
         } else {
-            favoriteRepository.save(tweet, this);
+            favoriteDAO.save(tweet, this);
         }
     }
 
@@ -109,7 +109,7 @@ public class TimelinePresenter implements
     public void onGetTimelineSuccess(List<TweetViewModel> tweets) {
         if (tweets != null && tweets.size() > 0) {
             for (TweetViewModel tweet : tweets) {
-                tweet.setFavorite(favoriteRepository.exists(tweet.getId()));
+                tweet.setFavorite(favoriteDAO.exists(tweet.getId()));
             }
 
             sinceId = tweets.get(0).getId();
@@ -194,7 +194,7 @@ public class TimelinePresenter implements
 
     public void getFavoriteTimeline(boolean showProgress) {
         view.setProgressIndicator(showProgress);
-        favoriteRepository.findAll(this);
+        favoriteDAO.findAll(this);
     }
 
     private boolean tweetIsEmpty() {

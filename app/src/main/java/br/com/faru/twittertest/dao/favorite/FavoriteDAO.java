@@ -1,4 +1,4 @@
-package br.com.faru.twittertest.repository.favorite;
+package br.com.faru.twittertest.dao.favorite;
 
 import br.com.faru.twittertest.model.Tweet;
 import br.com.faru.twittertest.model.view.TweetViewModel;
