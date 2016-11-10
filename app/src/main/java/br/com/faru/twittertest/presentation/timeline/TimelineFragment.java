@@ -93,7 +93,7 @@ public class TimelineFragment extends Fragment implements TimelineContract.View,
             type = (TimelineType) getArguments().getSerializable(Constants.TYPE);
         }
 
-        Injector.getComponent().inject(this);
+        Injector.getInstance().getComponent().inject(this);
 
         timelineAdapter = new TimelineAdapter(this);
         timelineList.setAdapter(timelineAdapter);

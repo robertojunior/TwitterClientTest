@@ -17,7 +17,7 @@ public class Injector {
         component = twitterTestComponent;
     }
 
-    public static TwitterTestComponent getComponent() {
+    public TwitterTestComponent getComponent() {
         if (component != null) {
             return component;
         } else {

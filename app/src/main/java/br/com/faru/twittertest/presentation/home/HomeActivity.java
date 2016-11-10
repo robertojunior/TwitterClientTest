@@ -30,7 +30,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.View, Hom
 
         ButterKnife.bind(this);
 
-        Injector.getComponent().inject(this);
+        Injector.getInstance().getComponent().inject(this);
 
         presenter.setView(this);
         presenter.checkTwitterCredentials();
