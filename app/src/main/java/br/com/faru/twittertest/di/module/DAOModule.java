@@ -7,7 +7,7 @@ import dagger.Provides;
 import io.realm.Realm;
 
 @Module
-public class RepositoryModule {
+public class DAOModule {
 
     @Provides
     public FavoriteRepository provideFavoriteRepository() {

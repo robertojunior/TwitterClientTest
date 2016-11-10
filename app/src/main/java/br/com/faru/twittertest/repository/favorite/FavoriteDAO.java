@@ -5,11 +5,11 @@ import br.com.faru.twittertest.model.view.TweetViewModel;
 import br.com.faru.twittertest.util.Constants;
 import io.realm.Realm;
 
-public class FavoriteRepository {
+public class FavoriteDAO {
 
     private Realm realm;
 
-    public FavoriteRepository(Realm realm) {
+    public FavoriteDAO(Realm realm) {
         this.realm = realm;
     }
 
